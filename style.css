@@ -1,0 +1,15 @@
+form  {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 500px;
+    background-color: aliceblue;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    padding: 10px;
+}
+
+input {
+    margin: 3px;
+}
