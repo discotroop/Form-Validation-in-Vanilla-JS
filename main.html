@@ -1,5 +1,5 @@
 <head>
-<link rel="stylesheet" type="text/css" src="style.css">    
+    <link rel="stylesheet" type="text/css" href="./style.css">    
 </head>
 
 <!-- 
@@ -12,20 +12,39 @@ js logic to check validity on loss of focus
         highlight red + send message
 
  -->
+Stories:
+- ///////////////Confirm email needs to match email.
+- Confirm password needs to match password
+- Phone number needs to match 1- 3 patterns.
+- Country needs to have a country list. ?
+- Tips need to pop up one failure.
 
+Password:
+mininimum length 6
+maximum length 20
+
+maybe add a country list later.
+https://frontendscript.com/country-dropdown-list-javascript/
+
+
+
+ <!-- required pattern="^[0-9]{5}(?:-[0-9]{4})?$" -->
 <body>
 <div>
     <form>
-        <input type="email" required>
-        <input type="email" required>
-        <input type="text" required> country
-        <input type="text" required pattern="^[0-9]{5}(?:-[0-9]{4})?$">
-        <input type="password">
-        <input type="password">
-        <input type="submit">
-
-
-
+        <label for="email"> Email: </label>
+        <input type="email" id="email" required>
+        <label for="confirmEmail"> Confirm Email: </label>
+        <input type="email" id="confirmEmail" required>
+        <label for="country"> Country: </label>
+        <input type="text" id="country" required>
+        <label for="phone"> Phone: </label>
+        <input type="text" id="phone" required patter="\d{3}\-\d{3}\-\d{4}">
+        <label for="password"> Password: </label>
+        <input type="password" id="password" minlength="6" maxlength="20">
+        <label for="confirmPassword"> Confirm Password </label>
+        <input type="password" id="confirmPassword">
+        <div> <input type="submit"  id="submit"> </div>
     </form>
 
 
