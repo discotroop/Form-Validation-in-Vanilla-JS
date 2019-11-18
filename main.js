@@ -1,16 +1,27 @@
 function validateForm () {
     const email = document.getElementById("email");
     const confirmEmail = document.getElementById("confirmEmail");
-    const country = document.getElementById("country");
+    const countryListDom = document.getElementById("country");
     const phone = document.getElementById("phone");
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirmPassword");
     const submit = document.getElementById("submit")
 
-    // submit.addEventListener("click", function () {
-    //     console.log(password.value);
-    //     console.log(confirmPassword.value) 
-    // })
+    function buildCountry () {
+        newCountry = document.createElement("option");
+        return newCountry;
+    }
+
+    function createCountryList () {
+        countryList.forEach(function (country) {
+            let newCountry = buildCountry(); 
+            newCountry.value = country;
+            newCountry.innerText = country;
+            countryListDom.appendChild(newCountry);
+        });
+    return;    
+    }
+
 
     email.addEventListener("input", function (event) {
         if (email.validity.typeMismatch) {
@@ -42,20 +53,40 @@ function validateForm () {
         } else {
             password.setCustomValidity("");
         }
-    })
+    });
 
     confirmPassword.addEventListener("input", function(event) {
         if (password.value !== confirmPassword.value) {
-            console.log("wrong");
             confirmPassword.setCustomValidity("Passwords must match!")
         } else {
             confirmPassword.setCustomValidity("");
         }
-    })
-}
+    });
 
+    function checkInputs () {
+        let inputs = document.querySelectorAll("input")
+        inputs.forEach(function(input) {
+            let validity = input.validity.valid;
+            if (validity) {
+                result = true;
+            } else {
+                result = false;
+                return result;
+            }
+            return result;
+        })
+    }
+    // tbd if desired.
+    submit.addEventListener("click", function(e) {
+        let checkValid = checkInputs();
+        if (checkValid === true) {
+            console.log("high five")
+        } else {
+            console.log("oh dear")
+        }
 
-function countryList () {
+    });
+
     const countryList = [
         "Afghanistan",
         "Albania",
@@ -307,6 +338,7 @@ function countryList () {
         "Zimbabwe",
         "Åland Islands"
     ];
+    createCountryList();
 }
 
 validateForm();
