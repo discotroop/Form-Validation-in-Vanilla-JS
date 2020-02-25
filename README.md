@@ -1,12 +1,13 @@
-Client Side Form Validation in Vanilla JS.
+Client Side Form Validation in JavaScript.
 
-This project provides client side form validation using a blend of vanilla JS and built in funcitonality from HTML 5.
+This project provides client side form validation using JavaScript and built in funcitonality from HTML 5 forms.
 
-Try it out at: https://discotroop.github.io/Form-Validation-in-Vanilla-JS/
+Try it out at: https://discotroop.github.io/JavaScript-Form-Validation/. 
 
 User Stories:
 - The email input checks if a valid email address has been entered.
 - The email input requests a valid email address if one has not been entered
+<br>
 
 - The Confirm email input checks if the email addresses match.
 - The Confirm email input requests a matching email if one has not been entered.
